@@ -1,0 +1,11 @@
+pub const BG: [u8; 3] = [ 40, 42, 54];
+pub const CL: [u8; 3] = [ 68, 71, 90];
+pub const FG: [u8; 3] = [248,248,242];
+pub const CM: [u8; 3] = [98, 114,164];
+pub const CY: [u8; 3] = [139,233,253];
+pub const GR: [u8; 3] = [80, 250,123];
+pub const OR: [u8; 3] = [255,184,108];
+pub const PN: [u8; 3] = [255,121,198];
+pub const PR: [u8; 3] = [189,147,249];
+pub const RD: [u8; 3] = [255, 85, 85];
+pub const YL: [u8; 3] = [241,250,140];

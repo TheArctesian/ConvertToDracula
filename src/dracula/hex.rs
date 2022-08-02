@@ -1,0 +1,11 @@
+pub const BG: &str = "282a36";
+pub const CL: &str = "44475a";
+pub const FG: &str = "f8f8f2";
+pub const CM: &str = "6272a4";
+pub const CY: &str = "8be9fd";
+pub const GR: &str = "50fa7b";
+pub const OR: &str = "ffb86c";
+pub const PN: &str = "ff79c6";
+pub const PR: &str = "bd93f9";
+pub const RD: &str = "ff5555";
+pub const YL: &str = "f1fa8c";
