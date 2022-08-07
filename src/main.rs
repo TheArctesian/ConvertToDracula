@@ -51,7 +51,9 @@ fn getType() -> bool {
     }
     return H; }
 fn getHex() -> RGB { 
+    
 
+    // Will need to do some null return checking
     let mut rd : u8 = 0x0;
     let mut gr : u8 = 0x0;
     let mut bl : u8 = 0x0;
@@ -59,21 +61,13 @@ fn getHex() -> RGB {
     let mut init_value = String::new();
     println!("Enter your hex value without the '#' (IE: #FFFFFF would be FFFFFF)");  
     io::stdin().read_line(&mut init_value).expect("Your std is infected");
-    for (ind, chr) in init_value.chars().enumerate() {
-        if ind == 2 {
-            let rd = u8::from_str_radix(&init_value[0..2],16).unwrap();
-            let gr = u8::from_str_radix(&init_value[2..4],16).unwrap();
-            let bl = u8::from_str_radix(&init_value[4..6],16).unwrap();
-
-            let RGB_value: RGB = RGB{rd,gr,bl};
-            return RGB_value;
-        } else {
-            let RGB_value: RGB = RGB{rd,gr,bl};
-            return RGB_value;
-        }
-    }
+    //let hex_vec : Vec<char> = init_value.chars().collect();
+    //println!("{:?}", hex_vec);
+    rd = u8::from_str_radix(&init_value[0..2],16).unwrap();
+    gr = u8::from_str_radix(&init_value[2..4],16).unwrap();
+    bl = u8::from_str_radix(&init_value[4..6],16).unwrap();
     let RGB_value: RGB = RGB{rd,gr,bl};
-    return RGB_value;   
+    return RGB_value;
 }
 fn getRGB() -> RGB {
     let mut rd : u8;
@@ -96,6 +90,23 @@ fn getRGB() -> RGB {
      
     }
 
+fn checkSim(RGB_Val : RGB) -> RGB {
+    let bl = RGB_Val.bl;
+    let gr = RGB_Val.gr;
+    let rd = RGB_Val.rd;
+    return RGB_Val; 
+    /* 
+     * Will need to parse each rdg value into 3 array representing the dracula values for each one 
+     * Then compare the rgb values to them storing a sep array with how much they are sep ie 12
+     * and 10 == 2 whereas 12-6 = 6. 
+     *
+     * Loop through each one comparing the index of the biggest sep
+     * If not we go through and check the diffrence for each one to find the semi closest one
+     *
+     */ 
+
+}
+    
 fn main() {
     let mut out_HEX = String::new();
     let mut out_RBG = String::new();
